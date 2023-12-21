@@ -1,0 +1,71 @@
+.download-button {
+  position: relative;
+  border-width: 0;
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+  border-radius: 4px;
+  z-index: 1;
+  margin-top: 21px;
+  margin-bottom: 51px;
+  cursor: pointer;
+}
+
+.download-button .docs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 10px;
+  border-radius: 4px;
+  z-index: 1;
+  background-color: #7843e9;
+  border: solid 1px #e8e8e82d;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  border-radius: 10px; /* Removed quotes around the value */
+  padding: 16px 72px; /* Removed quotes around the values */
+  color: white; /* Removed quotes around the value */
+
+  font-weight: 800; /* Removed quotes around the value */
+  font-size: 1.1rem;
+}
+
+.download {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  margin: 0 auto;
+  z-index: -1;
+  border-radius: 4px;
+  transform: translateY(0%);
+  background-color: #01e056;
+  border: solid 1px #01e0572d;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.download-button:hover .download {
+  transform: translateY(100%);
+}
+
+.download svg polyline,
+.download svg line {
+  animation: docs 1s infinite;
+}
+
+@keyframes docs {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(-15%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}

@@ -1,0 +1,30 @@
+.NavbarMainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+}
+
+.NavbarLeftSide span {
+  color: #333;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-left: 2px;
+
+}
+
+.NavbarMainContainer ul {
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+.NavbarMainContainer li:hover, .NavbarMainContainer span:hover {
+  cursor: pointer;
+  color: #7843e9;
+}
+

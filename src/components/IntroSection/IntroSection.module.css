@@ -1,0 +1,16 @@
+.mainHeadingContainer {
+  color: #333;
+  text-align: center;
+  padding: 5px 20px;
+}
+
+.introMainContainer {
+  position: relative;
+  background-image: url("https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg");
+}
+
+.typeWriter {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #7843e9;
+}

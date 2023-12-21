@@ -1,0 +1,10 @@
+.LeftSideStickyBarMainContainer {
+  width: 70px;
+  background-color: white;
+  position: absolute;
+  top: 25%;
+  left: 0;
+  -webkit-box-shadow: 6px 5px 0px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 5px 0px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 5px 0px 0px rgba(0, 0, 0, 0.75);
+}
