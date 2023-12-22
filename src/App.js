@@ -6,9 +6,6 @@ import Navbar from "./components/shared/Navbar/Navbar";
 import Sidebar from "./components/shared/Sidebar/Sidebar";
 import Home from "./Pages/Home";
 
-// CSS //
-import "./App.css";
-
 function App() {
   const [sideBarOpen, setSideBarOpen] = useState(false);
 

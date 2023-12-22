@@ -1,5 +1,6 @@
-// CSS //
+// React //
 import { Fragment } from "react";
+// CSS //
 import classes from "./DownloadResume.module.css";
 
 const DownloadResume = () => {
@@ -40,11 +41,11 @@ const DownloadResume = () => {
             viewBox="0 0 24 24"
           >
             <svg
-              class="css-i6dzq1"
-              stroke-linejoin="round"
-              stroke-linecap="round"
+              className="css-i6dzq1"
+              strokeLinejoin="round"
+              strokeLinecap="round"
               fill="none"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               height="20"
               width="20"
@@ -72,11 +73,11 @@ const DownloadResume = () => {
             viewBox="0 0 24 24"
           >
             <svg
-              class="css-i6dzq1"
-              stroke-linejoin="round"
-              stroke-linecap="round"
+              className="css-i6dzq1"
+              strokeLinejoin="round"
+              strokeLinecap="round"
               fill="none"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
               height="24"
               width="24"

@@ -1,0 +1,49 @@
+.AboutMainContainer {
+  padding: 15px 100px;
+  background-color: rgba(244,244,244,255);
+}
+.AboutMainContainer b {
+  font-size: 1.6rem;
+  color: #7843e9;
+}
+
+.AboutMainContainer h5 {
+  font-size: 1.8rem;
+}
+
+.AboutMainContainer p {
+    margin: 0;
+  font-size: 1.4rem;
+  color: #666;
+  max-width: 60rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.Heading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.TechStackContainer {
+ margin-top: 60px;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  column-gap: 5px;
+  row-gap: 10px;
+  align-items: center;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 968px) {
+  .AboutMainContainer {
+    padding: 15px 20px; /* Adjust the padding for smaller screens */
+  }
+
+  .TechStackContainer{
+    margin: 0;
+  }
+}

@@ -4,7 +4,7 @@ import classes from "./IntroSection.module.css";
 import Typewriter from "typewriter-effect";
 // Custom //
 import DownloadResume from "../DownloadResume/DownloadResume";
-import LeftSideStickyBar from "../LeftSideStickyBar/LeftSideStickyBar";
+import LeftSideStickyBar from "../shared/LeftSideStickyBar/LeftSideStickyBar";
 // MUI //
 import { useTheme, useMediaQuery } from "@mui/material";
 

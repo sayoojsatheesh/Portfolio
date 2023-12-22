@@ -1,5 +1,5 @@
 // MUI //
-import { Drawer, Divider } from "@mui/material";
+import { Drawer } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 // CSS //

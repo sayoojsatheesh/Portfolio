@@ -1,7 +1,7 @@
 // CSS //
 import classes from "./LeftSideStickyBar.module.css";
 // Custom //
-import ImageSub from "../shared/ImageSub/ImageSub";
+import ImageSub from './ImageSub/ImageSub'
 
 const LeftSideStickyBar = () => {
   return (
