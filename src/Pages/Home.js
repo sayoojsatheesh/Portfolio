@@ -4,13 +4,15 @@ import { Fragment } from "react";
 import IntroSection from "../components/IntroSection/IntroSection";
 import About from "../components/About/About";
 import ProjectSection from "../components/ProjectsSection/ProjectSection";
+import Contact from "../components/Contact/Contact";
 
 const Home = () => {
   return (
     <Fragment>
       <IntroSection />
       <About />
-      <ProjectSection/>
+      <ProjectSection />
+      <Contact />
     </Fragment>
   );
 };

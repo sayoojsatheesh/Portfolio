@@ -1,0 +1,30 @@
+.iconConatiner {
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 0.8rem;
+}
+
+.details {
+  font-size: 1.1rem;
+  text-align: center;
+  color: rgb(163, 163, 163);
+  margin-top: 0.3rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 550px) {
+  .CustomContactCardMainConatiner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .details,
+  .heading {
+    padding: .2rem 0rem;
+  }
+}
