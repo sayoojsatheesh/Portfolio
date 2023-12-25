@@ -8,7 +8,7 @@ import EmailIcon from "@mui/icons-material/Email";
 
 const Contact = () => {
   return (
-    <div className={classes.contactMainContainer}>
+    <div id="contact" className={classes.contactMainContainer}>
       <div className={classes.contactSubContainer}>
         <h3 className={classes.heading}>CONTACT</h3>
         <h2 className={classes.subHeading}>Feel Free to me Hit me up👇</h2>
@@ -16,7 +16,7 @@ const Contact = () => {
           <CustomContactCard
             icon={<MapIcon  sx={{ color: "#7843e9",fontSize:'2.1rem' }} />}
             heading={"Location"}
-            details={"Kannur,Kerala"}
+            details={"Kerala,India"}
           />
           <CustomContactCard
             icon={<EmailIcon  sx={{ color: "#7843e9",fontSize:'2.1rem' }} />}

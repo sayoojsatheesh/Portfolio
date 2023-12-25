@@ -5,6 +5,7 @@ import IntroSection from "../components/IntroSection/IntroSection";
 import About from "../components/About/About";
 import ProjectSection from "../components/ProjectsSection/ProjectSection";
 import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <About />
       <ProjectSection />
       <Contact />
+      <Footer />
     </Fragment>
   );
 };

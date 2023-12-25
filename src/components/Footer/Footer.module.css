@@ -1,0 +1,26 @@
+.footerMainContainer {
+  background-color: #2d2e32;
+  padding: 50px 20px;
+  color: white;
+}
+
+.Icons{
+    color: white;
+    margin-right: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.Icons:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+
+@media screen and (min-width: 551px) {
+    .footerMainContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+  }
+  

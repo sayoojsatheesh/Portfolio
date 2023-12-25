@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 // CSS //
 import classes from "./About.module.css";
 // Other //
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 let imageURL = [
   "https://skillicons.dev/icons?i=js",
@@ -22,26 +22,26 @@ let imageURL = [
 
 const About = () => {
   return (
-    <div className={classes.AboutMainContainer}>
+    <div id="about" className={classes.AboutMainContainer}>
       <h2 className={classes.Heading}>ABOUT ME</h2>
       <Grid container columnSpacing={10}>
         <Grid item xs={12} sm={7}>
           <h5>Get to Know Me</h5>
           <p>
-            <b>I</b>'m a Computer Science graduate with a B.Tech degree,
-            possessing
-            <b> 1.9 </b>years of experience as a software developer. My primary
-            focus lies in crafting user-friendly and aesthetically appealing
-            websites. Although I have predominantly worked on the frontend, I
-            also possess a solid understanding of backend technologies. I am
-            currently <b>open</b> to new opportunities.
+            <b>I</b> hold a B.Tech degree in Computer Science and bring with me
+            1.9 years of experience as a software developer. My expertise lies
+            in the development of user-friendly and visually compelling
+            websites. While my primary focus has been on frontend technologies,
+            I also have a comprehensive understanding of backend technologies.
+            Currently, I am actively seeking new opportunities to contribute my
+            skills and knowledge in a dynamic professional environment.
           </p>
         </Grid>
         <Grid item xs={12} sm={5}>
           <h5>My Tech Stack</h5>
           <div className={classes.TechStackContainer}>
             {imageURL.map((url) => (
-              <img key ={uuidv4()} src={url} />
+              <img key={uuidv4()} src={url} />
             ))}
           </div>
         </Grid>

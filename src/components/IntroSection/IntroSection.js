@@ -12,10 +12,10 @@ const IntroSection = () => {
   const theme = useTheme();
   const dontShowMenuIcon = useMediaQuery(theme.breakpoints.up("md"));
   return (
-    <div className={classes.introMainContainer}>
+    <div id="intro" className={classes.introMainContainer}>
       <div className={classes.mainHeadingContainer}>
         <h4 style={{ fontSize: "2rem" }}>Hello 👋</h4>
-        <h1 style={{ fontSize: "4rem" }}>
+        <h1 style={{ fontSize: "4rem", }}>
           I'M <span style={{ color: "#7843e9" }}>S</span>AYOOJ{" "}
           <span style={{ color: "#7843e9" }}>S</span>ATHEESH
         </h1>

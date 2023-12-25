@@ -26,7 +26,7 @@ let techStackProject2 = [
 
 const ProjectSection = () => {
   return (
-    <div className={classes.ProjectSectionMainContainer}>
+    <div id="project" className={classes.ProjectSectionMainContainer}>
       <h3>Projects</h3>
       <ProjectSectionContainer
         imagePath={"/images/CarRental.png"}
