@@ -11,7 +11,6 @@ function App() {
 
   // Handles opening and closing of sidebar //
   function toggleDrawer() {
-    console.log("hello");
     setSideBarOpen((prevValue) => {
       return !prevValue;
     });
