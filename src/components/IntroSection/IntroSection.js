@@ -32,7 +32,7 @@ const IntroSection = () => {
             }}
           />
         </div>
-        <DownloadResume />
+        {/* <DownloadResume /> */}
       </div>
       {dontShowMenuIcon ? <LeftSideStickyBar /> : null}
     </div>
