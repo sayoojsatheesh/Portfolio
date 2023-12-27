@@ -4,12 +4,11 @@
   padding: 5px 20px;
 }
 
-
-
 .introMainContainer {
   margin-top: 75px;
   position: relative;
   background-image: url("https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg");
+  margin-bottom: 75px;
 }
 
 .typeWriter {
@@ -17,4 +16,3 @@
   font-weight: 800;
   color: #7843e9;
 }
-
