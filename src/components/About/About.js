@@ -29,7 +29,7 @@ const About = () => {
           <h5>Get to Know Me</h5>
           <p>
             <b>I</b> hold a B.Tech degree in Computer Science and bring with me
-            1.9 years of experience as a software developer. My expertise lies
+            over 1 year of experience as a software developer. My expertise lies
             in the development of user-friendly and visually compelling
             websites. While my primary focus has been on frontend technologies,
             I also have a comprehensive understanding of backend technologies.
