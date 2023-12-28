@@ -8,10 +8,7 @@ const CustomContactCard = ({ icon, heading, details }) => {
       <div>
         <div className={classes.heading}>{heading}</div>
         {heading === "Mail" ? (
-          <a style={{textDecoration: 'none',
-          color: 'inherit',
-          padding: 0,
-          margin: 0,cursor:'pointer'}} href={`mailto:${'sayooj0076@gmail.com'}`}>
+          <a href={`mailto:${"sayooj0076@gmail.com"}`}>
             <div className={classes.details}>{details}</div>
           </a>
         ) : (
