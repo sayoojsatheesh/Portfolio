@@ -11,7 +11,7 @@ const Contact = () => {
     <div id="contact" className={classes.contactMainContainer}>
       <div className={classes.contactSubContainer}>
         <h3 className={classes.heading}>CONTACT</h3>
-        <h2 className={classes.subHeading}>Feel Free to me Hit me up👇</h2>
+        <h2 className={classes.subHeading}>Feel Free to  Hit me up👇</h2>
         <div className={classes.customCardContainer}>
           <CustomContactCard
             icon={<MapIcon  sx={{ color: "#7843e9",fontSize:'2.1rem' }} />}
