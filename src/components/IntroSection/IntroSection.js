@@ -14,7 +14,9 @@ const IntroSection = () => {
   return (
     <div id="intro" className={classes.introMainContainer}>
       <div className={classes.mainHeadingContainer}>
-        <h4 style={{ fontSize: "2rem" }}>Hello 👋</h4>
+        <h4 style={{ fontSize: "2rem" }}>
+          Hello <span className={classes.wave}>👋</span>
+        </h4>
         <h1 style={{ fontSize: "4rem" }}>
           I'M <span style={{ color: "#7843e9" }}>S</span>AYOOJ{" "}
           <span style={{ color: "#7843e9" }}>S</span>ATHEESH
