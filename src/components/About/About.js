@@ -18,6 +18,7 @@ let imageURL = [
   "https://skillicons.dev/icons?i=materialui",
   "https://skillicons.dev/icons?i=mongodb",
   "https://skillicons.dev/icons?i=postgres",
+  "https://skillicons.dev/icons?i=ts"
 ];
 
 const About = () => {
@@ -28,13 +29,7 @@ const About = () => {
         <Grid item xs={12} sm={7}>
           <h5>Get to Know Me</h5>
           <p>
-            <b>I</b> hold a B.Tech degree in Computer Science and bring with me
-            1.9 years of experience as a software developer. My expertise lies in
-            the development of user-friendly and visually compelling websites.
-            While my primary focus has been on frontend technologies, I also
-            have a comprehensive understanding of backend technologies.
-            Currently, I am actively seeking new opportunities to contribute my
-            skills and knowledge in a dynamic professional environment.
+            <b>I</b> hold a B.Tech degree in Computer Science and bring with me nearly 2 years of experience as a software developer. I specialize in React for the front end and Node.js for the back end. My expertise lies in crafting intuitive user interfaces and developing robust server-side applications, ensuring a seamless end-to-end experience for users. Currently, I am actively seeking new opportunities to contribute my skills and knowledge in a dynamic professional environment.
           </p>
         </Grid>
         <Grid item xs={12} sm={5}>
