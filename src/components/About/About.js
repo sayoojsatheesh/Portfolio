@@ -18,7 +18,7 @@ let imageURL = [
   "https://skillicons.dev/icons?i=materialui",
   "https://skillicons.dev/icons?i=mongodb",
   "https://skillicons.dev/icons?i=postgres",
-  "https://skillicons.dev/icons?i=ts"
+  "https://skillicons.dev/icons?i=ts",
 ];
 
 const About = () => {
@@ -29,7 +29,18 @@ const About = () => {
         <Grid item xs={12} sm={7}>
           <h5>Get to Know Me</h5>
           <p>
-            <b>I</b> hold a B.Tech degree in Computer Science and bring with me nearly 2 years of experience as a software developer. I specialize in React for the front end and Node.js for the back end. My expertise lies in crafting intuitive user interfaces and developing robust server-side applications, ensuring a seamless end-to-end experience for users.
+            <b>I</b> am a Full-Stack Developer with a B.Tech in Computer Science
+            and three years of experience building scalable web applications and
+            enhancing user experiences. Specializing in React, Next.js, and
+            Node.js, I excel at crafting intuitive front-end interfaces and
+            developing robust back-end systems for seamless end-to-end
+            performance. Currently, I work at Zeazonz Technologies, where I
+            contribute to an incident management product designed to streamline
+            critical operations. My past achievements include developing
+            real-time tracking systems, dynamic dashboards, and high-performance
+            web applications using modern technologies like PostgreSQL and
+            MongoDB. Passionate about clean code and innovative solutions, I
+            thrive on creating impactful digital experiences.
           </p>
         </Grid>
         <Grid item xs={12} sm={5}>
