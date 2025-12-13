@@ -1,38 +1,132 @@
-.mainHeadingContainer {
-  color: #333;
-  text-align: center;
-  padding: 5px 20px;
-}
-
 .introMainContainer {
-  margin-top: 75px;
   position: relative;
-  background-image: url("https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg");
-  min-height: 75vh;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)
+    ),
+    url("https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
 }
 
-.typeWriter {
-  min-height: 130px;
-  font-size: 1.5rem;
-  font-weight: 800;
+.heroContent {
+  text-align: center;
+  max-width: 850px;
+}
+
+.greeting {
+  font-size: 2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin: 5px 0 10px;
+  color: #222;
+}
+
+.highlight {
   color: #7843e9;
 }
 
+.typeWriterText {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #7843e9;
+  min-height: 50px;
+  margin-top: 10px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #555;
+}
+
+.ctaContainer {
+  margin-top: 35px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.primaryButton {
+  background: #7843e9;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: 0.25s ease-in-out;
+  text-decoration: none;
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+  background: #5d2fd1;
+}
+
+.secondaryButton {
+  border: 2px solid #7843e9;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #7843e9;
+  text-decoration: none;
+  transition: 0.25s ease-in-out;
+}
+
+.secondaryButton:hover {
+  background: #f4edff;
+}
+
 .wave {
-  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s;        /* Change to speed up or slow down */
-  animation-iteration-count: infinite;  /* Never stop waving :) */
-  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  animation: wave-animation 2s infinite;
   display: inline-block;
+  transform-origin: 70% 70%;
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-  100% { transform: rotate( 0.0deg) }
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(14deg); }
+  30% { transform: rotate(-8deg); }
+  40% { transform: rotate(14deg); }
+  50% { transform: rotate(-4deg); }
+  60% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.8rem;
+  }
+
+  .typeWriterText {
+    font-size: 1.8rem;
+  }
+
+  .introMainContainer {
+    padding: 40px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2.3rem;
+  }
+
+  .typeWriterText {
+    font-size: 1.4rem;
+  }
+
+  .greeting {
+    font-size: 1.3rem;
+  }
 }

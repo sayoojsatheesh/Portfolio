@@ -1,31 +1,41 @@
-// CSS /
+// CSS
 import classes from "./Contact.module.css";
-// Custom //
+// Components
 import CustomContactCard from "./CustomContactCard/CustomContactCard";
-// MUI //
+// MUI Icons
 import MapIcon from "@mui/icons-material/Map";
 import EmailIcon from "@mui/icons-material/Email";
 
 const Contact = () => {
+  const contactItems = [
+    {
+      icon: <MapIcon className={classes.icon} />,
+      heading: "Location",
+      details: "Kerala, India",
+    },
+    {
+      icon: <EmailIcon className={classes.icon} />,
+      heading: "Mail",
+      details: "sayooj0076@gmail.com",
+      link: "mailto:sayooj0076@gmail.com",
+    },
+  ];
+
   return (
-    <div id="contact" className={classes.contactMainContainer}>
-      <div className={classes.contactSubContainer}>
-        <h3 className={classes.heading}>CONTACT</h3>
-        <h2 className={classes.subHeading}>Feel Free to  Hit me up👇</h2>
-        <div className={classes.customCardContainer}>
-          <CustomContactCard
-            icon={<MapIcon  sx={{ color: "#7843e9",fontSize:'2.1rem' }} />}
-            heading={"Location"}
-            details={"Kerala,India"}
-          />
-          <CustomContactCard
-            icon={<EmailIcon  sx={{ color: "#7843e9",fontSize:'2.1rem' }} />}
-            heading={"Mail"}
-            details={"sayooj0076@gmail.com"}
-          />
+    <section id="contact" className={classes.contactSection}>
+      <div className={classes.container}>
+        <div className={classes.header}>
+          <h3 className={classes.title}>CONTACT</h3>
+          <h2 className={classes.subtitle}>Feel Free to Hit Me Up 👇</h2>
+        </div>
+
+        <div className={classes.cardsWrapper}>
+          {contactItems.map((item, index) => (
+            <CustomContactCard key={index} {...item} />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

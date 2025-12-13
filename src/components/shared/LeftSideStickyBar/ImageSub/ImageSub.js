@@ -4,7 +4,7 @@ const ImageSub = ({ imageURL, link }) => {
   return (
     <a href={link} target="_blank" rel="noopener noreferrer">
       <div className={classes.imageContainerWrapper}>
-        <img src={imageURL} />
+        <img alt="sidebar" src={imageURL} />
       </div>
     </a>
   );

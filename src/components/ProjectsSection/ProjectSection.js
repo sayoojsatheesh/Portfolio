@@ -27,19 +27,18 @@ let techStackProject2 = [
 const ProjectSection = () => {
   return (
     <div id="project" className={classes.ProjectSectionMainContainer}>
-      <h3>Projects</h3>
+      <h2 className={classes.sectionTitle}>Projects</h2>
       <ProjectSectionContainer
         imagePath={"/images/CarRental.png"}
-        summaryText={`Car rental website is an online platform that allows users to rent cars for personal or business use. The website provides an
-        interface for searching and reserving cars. Created using React`}
+        summaryText={`A car rental website is an online platform that allows users to rent cars for personal or business use. The website provides an intuitive interface for searching and reserving vehicles. It is built using React.`}
         heading={"CAR RENTAL"}
         gitlink={"https://github.com/sayoojsatheesh/car-rental"}
         liveDemoLink="https://car-rental-lovat.vercel.app/"
         techStack={techStackProject1}
       />
       <ProjectSectionContainer
-      imagePath={"/images/ShoesWebsite.png"}
-        summaryText={`A user-friendly shoe-selling website with extensive options. Users can easily explore a wide array of shoes, apply filters, and utilize sorting features for a personalized shopping experience. Backend operations are managed with Node.js, connected to MongoDB.
+        imagePath={"/images/ShoesWebsite.png"}
+        summaryText={`A user-friendly shoe-selling website offering a wide range of products. Users can easily browse through various shoes, apply filters, and use sorting features for a personalized shopping experience. The backend is built with Node.js and connected to MongoDB.
       `}
         heading={"SHOES STORE"}
         gitlink={"https://github.com/sayoojsatheesh/E-commerce"}

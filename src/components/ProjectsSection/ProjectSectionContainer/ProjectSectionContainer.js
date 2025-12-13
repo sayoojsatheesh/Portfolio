@@ -4,7 +4,7 @@ import { useState } from "react";
 import ImageConatiner from "../ImageContainer/ImageContainer";
 import ProjectDetails from "../ProjectDetails/ProjectDetails";
 // MUI //
-import { useTheme, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 
 const ProjectSectionContainer = ({
   techStack,
@@ -15,7 +15,6 @@ const ProjectSectionContainer = ({
   imagePath,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const theme = useTheme();
   const flexDirectionColumn = useMediaQuery("(max-width:1116px)");
 
   const handleHover = () => {

@@ -22,7 +22,7 @@ const ProjectDetails = ({
       onMouseLeave={handleHoverOut}
     >
       <h4 className={classes.heading}>{heading}</h4>
-      <p>{summaryText}</p>
+      <p className={classes.summary}>{summaryText}</p>
       <TechStackInfiniteScroll techStack={techStack} />
       <div className={classes.bottomLinks}>
         <a href={gitlink} target="_blank" rel="noopener noreferrer">

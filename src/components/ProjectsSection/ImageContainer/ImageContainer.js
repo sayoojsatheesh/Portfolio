@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 // CSS //
 import classes from "./ImageContainer.module.css";
 

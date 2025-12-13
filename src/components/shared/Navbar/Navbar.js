@@ -1,69 +1,73 @@
-// CSS //
+// CSS
 import classes from "./Navbar.module.css";
-// MUI //
+// MUI
 import { useTheme, useMediaQuery } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-// Libaries //
+// Libraries
 import { Link } from "react-scroll";
+import { useEffect, useState } from "react";
 
 const Navbar = ({ toggleDrawer }) => {
   const theme = useTheme();
-  const dontShowMenuIcon = useMediaQuery(theme.breakpoints.up("sm"));
+  const showDesktopMenu = useMediaQuery(theme.breakpoints.up("sm"));
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className={classes.NavbarMainContainer}>
+    <nav
+      className={`${classes.NavbarMainContainer} ${
+        scrolled ? classes.scrolled : ""
+      }`}
+    >
       <div className={classes.NavbarLeftSide}>
-        <Link to="intro" spy={true} smooth={true} offset={-75} duration={500}>
-          <span>Sayooj Satheesh</span>
+        <Link to="intro" smooth={true} offset={-70} duration={500}>
+          <span className={classes.logo}>Sayooj Satheesh</span>
         </Link>
       </div>
-      <div>
-        {dontShowMenuIcon ? (
-          <div>
-            <ul>
-              <Link
-                to="intro"
-                spy={true}
-                smooth={true}
-                offset={-75}
-                duration={500}
-              >
-                <li>HOME</li>
-              </Link>
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-1}
-                duration={500}
-              >
-                <li>ABOUT</li>
-              </Link>
-              <Link
-                to="project"
-                spy={true}
-                smooth={true}
-                offset={-1}
-                duration={500}
-              >
-                <li>PROJECTS</li>
-              </Link>
-              <Link
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-1}
-                duration={500}
-              >
-                <li>CONTACT</li>
-              </Link>
-            </ul>
-          </div>
-        ) : (
-          <MenuIcon fontSize="large" onClick={toggleDrawer} />
-        )}
-      </div>
-    </div>
+
+      {/* Desktop Menu */}
+      {showDesktopMenu ? (
+        <ul className={classes.NavItems}>
+          <li>
+            <Link to="intro" smooth={true} offset={-70} duration={500}>
+              HOME
+            </Link>
+          </li>
+
+          <li>
+            <Link to="about" smooth={true} offset={-70} duration={500}>
+              ABOUT
+            </Link>
+          </li>
+
+          <li>
+            <Link to="project" smooth={true} offset={-70} duration={500}>
+              PROJECTS
+            </Link>
+          </li>
+
+          <li>
+            <Link to="contact" smooth={true} offset={-70} duration={500}>
+              CONTACT
+            </Link>
+          </li>
+        </ul>
+      ) : (
+        <MenuIcon
+          fontSize="large"
+          onClick={toggleDrawer}
+          className={classes.menuIcon}
+        />
+      )}
+    </nav>
   );
 };
 

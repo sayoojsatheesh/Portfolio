@@ -1,42 +1,69 @@
-.iconConatiner {
-  text-align: center;
-}
-
-.heading {
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-top: 0.8rem;
-}
-
-.details {
-  font-size: 1.2rem;
-  text-align: center;
-  color: rgb(163, 163, 163);
-  margin-top: 0.3rem;
-  margin-bottom: 2rem;
-}
-
-.CustomContactCardMainConatiner a {
+/* Wrapper for clickable cards */
+.wrapper {
   text-decoration: none;
   color: inherit;
-  padding: 0;
-  margin: 0;
+}
+
+/* Main card */
+.card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
   cursor: pointer;
 }
 
-.details:hover {
-  color: #7843e9 !important;
+/* Hover Effect */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-@media (min-width: 550px) {
-  .CustomContactCardMainConatiner {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+/* Icon container */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(120, 67, 233, 0.1);
+  padding: 0.7rem;
+  border-radius: 12px;
+}
+
+/* Heading */
+.heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Details */
+.details {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+  transition: color 0.3s ease;
+}
+
+/* Hover change for links */
+.wrapper:hover .details {
+  color: #7843e9;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 550px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.3rem;
   }
-  .details,
-  .heading {
-    padding: 0.2rem 0rem;
+
+  .icon {
+    margin-bottom: 0.5rem;
   }
 }

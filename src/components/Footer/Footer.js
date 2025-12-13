@@ -1,32 +1,36 @@
-// CSS //
 import classes from "./Footer.module.css";
-// MUI //
+
+// MUI Icons
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <div id="footer" className={classes.footerMainContainer}>
-      <h3 style={{ textAlign: "center" }}>
-        Copyright © 2023. All rights are reserved
-      </h3>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+    <footer id="footer" className={classes.footer}>
+      <p className={classes.text}>© {year} All rights reserved.</p>
+
+      <div className={classes.socials}>
         <a
-          href={"https://github.com/sayoojsatheesh"}
+          href="https://github.com/sayoojsatheesh"
           target="_blank"
           rel="noopener noreferrer"
+          className={classes.iconWrapper}
         >
-          <GitHubIcon fontSize="large" className={classes.Icons} />
+          <GitHubIcon fontSize="large" className={classes.icon} />
         </a>
+
         <a
-          href={"https://www.linkedin.com/in/sayooj-satheesh-44ba2a235/"}
+          href="https://www.linkedin.com/in/sayooj-satheesh-44ba2a235/"
           target="_blank"
           rel="noopener noreferrer"
+          className={classes.iconWrapper}
         >
-          <LinkedInIcon fontSize="large" className={classes.Icons} />
+          <LinkedInIcon fontSize="large" className={classes.icon} />
         </a>
       </div>
-    </div>
+    </footer>
   );
 };
 

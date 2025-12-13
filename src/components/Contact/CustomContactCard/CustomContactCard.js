@@ -1,21 +1,24 @@
-// CSS //
+// CSS
 import classes from "./CustomContactCard.module.css";
 
-const CustomContactCard = ({ icon, heading, details }) => {
-  return (
-    <div className={classes.CustomContactCardMainConatiner}>
-      <div className={classes.iconConatiner}>{icon}</div>
-      <div>
-        <div className={classes.heading}>{heading}</div>
-        {heading === "Mail" ? (
-          <a href={`mailto:${"sayooj0076@gmail.com"}`}>
-            <div className={classes.details}>{details}</div>
-          </a>
-        ) : (
-          <div className={classes.details}>{details}</div>
-        )}
+const CustomContactCard = ({ icon, heading, details, link }) => {
+  const card = (
+    <div className={classes.card}>
+      <div className={classes.icon}>{icon}</div>
+
+      <div className={classes.content}>
+        <h4 className={classes.heading}>{heading}</h4>
+        <p className={classes.details}>{details}</p>
       </div>
     </div>
+  );
+
+  return link ? (
+    <a href={link} className={classes.wrapper} target="_blank" rel="noopener noreferrer">
+      {card}
+    </a>
+  ) : (
+    card
   );
 };
 

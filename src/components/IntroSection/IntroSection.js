@@ -1,32 +1,37 @@
-// CSS //
+// CSS
 import classes from "./IntroSection.module.css";
-// Other //
+// Other
 import Typewriter from "typewriter-effect";
-// Custom //
-import DownloadResume from "../DownloadResume/DownloadResume";
+// Custom
 import LeftSideStickyBar from "../shared/LeftSideStickyBar/LeftSideStickyBar";
-// MUI //
+// MUI
 import { useTheme, useMediaQuery } from "@mui/material";
-
+// Libaries
+import { Link } from "react-scroll";
 const IntroSection = () => {
   const theme = useTheme();
-  const dontShowMenuIcon = useMediaQuery(theme.breakpoints.up("md"));
+  const showSidebar = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
-    <div id="intro" className={classes.introMainContainer}>
-      <div className={classes.mainHeadingContainer}>
-        <h4 style={{ fontSize: "2rem" }}>
+    <section id="intro" className={classes.introMainContainer}>
+      {showSidebar && <LeftSideStickyBar />}
+
+      <div className={classes.heroContent}>
+        <h4 className={classes.greeting}>
           Hello <span className={classes.wave}>👋</span>
         </h4>
-        <h1 style={{ fontSize: "4rem" }}>
-          I'M <span style={{ color: "#7843e9" }}>S</span>AYOOJ{" "}
-          <span style={{ color: "#7843e9" }}>S</span>ATHEESH
+
+        <h1 className={classes.name}>
+          I'm <span className={classes.highlight}>Sayooj Satheesh</span>
         </h1>
-        <div style={{ fontSize: "3rem" }} className={classes.typeWriter}>
+
+        <div className={classes.typeWriterText}>
           <Typewriter
             options={{
               strings: [
-                "Front-End Developer",
-                "Back-End Developer",
+                "Frontend Developer",
+                "React Specialist",
+                "Backend Developer",
                 "Problem Solver",
               ],
               autoStart: true,
@@ -34,10 +39,36 @@ const IntroSection = () => {
             }}
           />
         </div>
-      
+
+        <p className={classes.subtitle}>
+          I build fast, scalable and user-focused web applications.
+        </p>
+
+        <div className={classes.ctaContainer}>
+          <Link
+            to="project"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={classes.primaryButton}
+          >
+            View My Work
+          </Link>
+
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className={classes.secondaryButton}
+          >
+            Contact Me
+          </Link>
+        </div>
       </div>
-      {dontShowMenuIcon ? <LeftSideStickyBar /> : null}
-    </div>
+    </section>
   );
 };
 

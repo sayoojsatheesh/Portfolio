@@ -1,26 +1,50 @@
-.footerMainContainer {
+.footer {
   background-color: #2d2e32;
-  padding: 50px 20px;
+  padding: 40px 20px;
+  color: #ffffff;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Footer text */
+.text {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Social icons container */
+.socials {
+  display: flex;
+  gap: 1.4rem;
+}
+
+/* Removing default link styling */
+.iconWrapper {
+  text-decoration: none;
+}
+
+/* Icon style */
+.icon {
   color: white;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.Icons{
-    color: white;
-    margin-right: 20px;
-    transition: transform 10s ease-in-out;
+/* Hover effect */
+.icon:hover {
+  transform: scale(1.2);
+  opacity: 0.85;
+  cursor: pointer;
 }
 
-.Icons:hover{
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-
-@media screen and (min-width: 551px) {
-    .footerMainContainer {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
+/* Desktop layout */
+@media (min-width: 551px) {
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px 80px;
   }
-  
+}

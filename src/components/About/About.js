@@ -1,53 +1,66 @@
-// MUI //
+// MUI
 import Grid from "@mui/material/Grid";
-// CSS //
+// CSS
 import classes from "./About.module.css";
-// Other //
-import { v4 as uuidv4 } from "uuid";
 
-let imageURL = [
-  "https://skillicons.dev/icons?i=js",
-  "https://skillicons.dev/icons?i=html",
-  "https://skillicons.dev/icons?i=css",
-  "https://skillicons.dev/icons?i=react",
-  "https://skillicons.dev/icons?i=next",
-  "https://skillicons.dev/icons?i=nodejs",
-  "https://skillicons.dev/icons?i=express",
-  "https://skillicons.dev/icons?i=aws",
-  "https://skillicons.dev/icons?i=github",
-  "https://skillicons.dev/icons?i=materialui",
-  "https://skillicons.dev/icons?i=mongodb",
-  "https://skillicons.dev/icons?i=postgres",
-  "https://skillicons.dev/icons?i=ts",
+const techStack = [
+  "js",
+  "react",
+  "next",
+  "nodejs",
+  "express",
+  "postgres",
+  "mongodb",
+  "aws",
+  "materialui",
+  "github",
+  "html",
+  "css",
 ];
 
 const About = () => {
   return (
     <div id="about" className={classes.AboutMainContainer}>
-      <h2 className={classes.Heading}>ABOUT ME</h2>
-      <Grid container columnSpacing={10}>
-        <Grid item xs={12} sm={7}>
-          <h5>Get to Know Me</h5>
-          <p>
-            <b>I</b> am a Full-Stack Developer with a B.Tech in Computer Science
-            and three years of experience building scalable web applications and
-            enhancing user experiences. Specializing in React, Next.js, and
-            Node.js, I excel at crafting intuitive front-end interfaces and
-            developing robust back-end systems for seamless end-to-end
-            performance. Currently, I work at Zeazonz Technologies, where I
-            contribute to an incident management product designed to streamline
-            critical operations. My past achievements include developing
-            real-time tracking systems, dynamic dashboards, and high-performance
-            web applications using modern technologies like PostgreSQL and
-            MongoDB. Passionate about clean code and innovative solutions, I
-            thrive on creating impactful digital experiences.
+      <h2 className={classes.SectionTitle}>About Me</h2>
+
+      <Grid container spacing={6} alignItems="center">
+        {/* LEFT SIDE */}
+        <Grid item xs={12} md={7}>
+          <h3 className={classes.SubTitle}>Who I Am</h3>
+
+          <p className={classes.Description}>
+            I’m a <b>Frontend-Focused Full-Stack Developer</b> with 
+            3.5 years of experience building fast, scalable and 
+            user-centric web applications. I specialize in 
+            <b> React, Next.js, Node.js</b>, and modern UI engineering.
+          </p>
+
+          <p className={classes.Description}>
+            Currently at <b>Zeazonz Technologies</b>, I build 
+            production-ready features for an incident management platform —
+            improving performance, reliability, and user experience.
+          </p>
+
+          <p className={classes.Description}>
+            My work includes real-time dashboards, live tracking systems,
+            optimized APIs, reusable UI components, and cloud-ready 
+            architectures. I’m passionate about clean code, system thinking, 
+            and shipping meaningful products.
           </p>
         </Grid>
-        <Grid item xs={12} sm={5}>
-          <h5>My Tech Stack</h5>
-          <div className={classes.TechStackContainer}>
-            {imageURL.map((url) => (
-              <img key={uuidv4()} src={url} />
+
+        {/* RIGHT SIDE */}
+        <Grid item xs={12} md={5}>
+          <h3 className={classes.SubTitle}>Tech Stack</h3>
+
+          <div className={classes.TechGrid}>
+            {techStack.map((item) => (
+              <div key={item} className={classes.TechItem}>
+                <img
+                  src={`https://skillicons.dev/icons?i=${item}`}
+                  alt={item}
+                />
+              </div>
             ))}
           </div>
         </Grid>

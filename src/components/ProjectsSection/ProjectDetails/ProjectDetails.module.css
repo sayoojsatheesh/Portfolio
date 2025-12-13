@@ -39,6 +39,16 @@
   cursor: pointer;
 }
 
+.summary {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #d1d1d1;
+  max-width: 65ch;
+  margin: 1.2rem auto 0;
+  text-align: center;
+}
+
+
 @media only screen and (max-width: 1116px) {
   .ProjectDetailsMainContainer {
     width: 100%;
