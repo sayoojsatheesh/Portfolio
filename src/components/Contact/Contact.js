@@ -16,8 +16,8 @@ const Contact = () => {
     {
       icon: <EmailIcon className={classes.icon} />,
       heading: "Mail",
-      details: "sayooj0076@gmail.com",
-      link: "mailto:sayooj0076@gmail.com",
+      details: "sayoojsatheesh.dev@gmail.com",
+      link: "mailto:sayoojsatheesh.dev@gmail.com",
     },
   ];
 
