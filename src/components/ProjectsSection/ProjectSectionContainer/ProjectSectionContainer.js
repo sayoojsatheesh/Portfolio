@@ -15,7 +15,7 @@ const ProjectSectionContainer = ({
   imagePath,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const flexDirectionColumn = useMediaQuery("(max-width:1116px)");
+const isMobile = useMediaQuery("(max-width:1116px)");
 
   const handleHover = () => {
     setIsHovered(true);
@@ -29,12 +29,15 @@ const ProjectSectionContainer = ({
       style={{
         backgroundColor: "rgba(246,246,246,255)",
         width: "90%",
-        padding: "20px  35px",
+        minHeight: "420px", 
+        padding: "30px 35px",
+        margin: "30px auto", 
         display: "flex",
-        flexDirection: `${flexDirectionColumn ? "column" : ""}`,
+        flexDirection: isMobile ? "column" : "row",
         justifyContent: "space-between",
-        borderRadius: "10px",
-        alignItems: "center",
+        alignItems: "stretch",
+        gap: "30px", 
+        borderRadius: "12px",
       }}
     >
       <ImageConatiner
