@@ -9,6 +9,12 @@
   -moz-box-shadow: 4px 10px 26px 0px rgba(0, 0, 0, 0.75);
 }
 
+.imageContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .scroll {
   object-position: bottom center;
 }

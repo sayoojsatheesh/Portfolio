@@ -15,7 +15,7 @@ const ProjectSectionContainer = ({
   imagePath,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-const isMobile = useMediaQuery("(max-width:1116px)");
+  const isMobile = useMediaQuery("(max-width:1116px)");
 
   const handleHover = () => {
     setIsHovered(true);
@@ -29,32 +29,35 @@ const isMobile = useMediaQuery("(max-width:1116px)");
       style={{
         backgroundColor: "rgba(246,246,246,255)",
         width: "90%",
-        minHeight: "420px", 
+        minHeight: "420px",
         padding: "30px 35px",
-        margin: "30px auto", 
+        margin: "30px auto",
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
-        justifyContent: "space-between",
-        alignItems: "stretch",
-        gap: "30px", 
+        gap: "30px",
         borderRadius: "12px",
       }}
     >
-      <ImageConatiner
-        handleHover={handleHover}
-        handleHoverOut={handleHoverOut}
-        isHovered={isHovered}
-        imagePath={imagePath}
-      />
-      <ProjectDetails
-        handleHover={handleHover}
-        handleHoverOut={handleHoverOut}
-        summaryText={summaryText}
-        heading={heading}
-        liveDemoLink={liveDemoLink}
-        gitlink={gitlink}
-        techStack={techStack}
-      />
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <ImageConatiner
+          handleHover={handleHover}
+          handleHoverOut={handleHoverOut}
+          isHovered={isHovered}
+          imagePath={imagePath}
+        />
+      </div>
+
+      <div style={{ flex: 1, minWidth: 0}}>
+        <ProjectDetails
+          handleHover={handleHover}
+          handleHoverOut={handleHoverOut}
+          summaryText={summaryText}
+          heading={heading}
+          liveDemoLink={liveDemoLink}
+          gitlink={gitlink}
+          techStack={techStack}
+        />
+      </div>
     </div>
   );
 };

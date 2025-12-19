@@ -4,18 +4,18 @@ import Grid from "@mui/material/Grid";
 import classes from "./About.module.css";
 
 const techStack = [
-  "js",
+  "javascript",
   "react",
-  "next",
+  "nextjs",
+  "html",
+  "css",
+  "materialui",
   "nodejs",
   "express",
   "postgres",
   "mongodb",
   "aws",
-  "materialui",
-  "github",
-  "html",
-  "css",
+  "github"
 ];
 
 const About = () => {
@@ -46,8 +46,11 @@ const About = () => {
           <p className={classes.Description}>
             My work includes real-time dashboards, live tracking systems,
             optimized APIs, reusable UI components, and cloud-ready
-            architectures. I’m passionate about clean code, system thinking, and
-            shipping meaningful products.
+            architectures. I have a strong foundation in
+            <b> data structures and algorithms</b>, which I apply to reason
+            about performance, scalability, and clean system design. I’m
+            passionate about clean code, system thinking, and shipping
+            meaningful products.
           </p>
         </Grid>
 
