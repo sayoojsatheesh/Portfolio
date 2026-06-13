@@ -8,7 +8,7 @@ import { SCROLL_DURATION, SCROLL_OFFSET } from "../../../constants/layout";
 const navLinks = [
   { to: "intro", label: "Home" },
   { to: "about", label: "About" },
-  { to: "project", label: "Projects" },
+  // { to: "project", label: "Projects" },
   { to: "contact", label: "Contact" },
 ];
 

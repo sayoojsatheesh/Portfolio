@@ -12,7 +12,7 @@ const Home = () => {
     <Fragment>
       <IntroSection />
       <About />
-      <ProjectSection />
+      {/* <ProjectSection /> */}
       <Contact />
       <Footer />
     </Fragment>
