@@ -1,37 +1,38 @@
-// CSS
 import classes from "./Contact.module.css";
-// Components
 import CustomContactCard from "./CustomContactCard/CustomContactCard";
-// MUI Icons
 import MapIcon from "@mui/icons-material/Map";
 import EmailIcon from "@mui/icons-material/Email";
 
-const Contact = () => {
-  const contactItems = [
-    {
-      icon: <MapIcon className={classes.icon} />,
-      heading: "Location",
-      details: "Kerala, India",
-    },
-    {
-      icon: <EmailIcon className={classes.icon} />,
-      heading: "Mail",
-      details: "sayoojsatheesh.dev@gmail.com",
-      link: "mailto:sayoojsatheesh.dev@gmail.com",
-    },
-  ];
+const contactItems = [
+  {
+    icon: <MapIcon />,
+    heading: "Location",
+    details: "Kerala, India",
+  },
+  {
+    icon: <EmailIcon />,
+    heading: "Email",
+    details: "sayoojsatheesh.dev@gmail.com",
+    link: "mailto:sayoojsatheesh.dev@gmail.com",
+  },
+];
 
+const Contact = () => {
   return (
     <section id="contact" className={classes.contactSection}>
-      <div className={classes.container}>
-        <div className={classes.header}>
-          <h3 className={classes.title}>CONTACT</h3>
-          <h2 className={classes.subtitle}>Feel Free to Hit Me Up 👇</h2>
-        </div>
+      <div className="section-inner">
+        <header className="section-header">
+          <p className="section-eyebrow">Contact</p>
+          <h2 className="section-title">Get in touch</h2>
+          <p className="section-lead">
+            Open to new opportunities and collaborations. Feel free to reach
+            out — I&apos;ll get back to you as soon as I can.
+          </p>
+        </header>
 
         <div className={classes.cardsWrapper}>
-          {contactItems.map((item, index) => (
-            <CustomContactCard key={index} {...item} />
+          {contactItems.map((item) => (
+            <CustomContactCard key={item.heading} {...item} />
           ))}
         </div>
       </div>

@@ -1,71 +1,68 @@
-// CSS
 import classes from "./Navbar.module.css";
-// MUI
 import { useTheme, useMediaQuery } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-// Libraries
 import { Link } from "react-scroll";
 import { useEffect, useState } from "react";
+import { SCROLL_DURATION, SCROLL_OFFSET } from "../../../constants/layout";
+
+const navLinks = [
+  { to: "intro", label: "Home" },
+  { to: "about", label: "About" },
+  { to: "project", label: "Projects" },
+  { to: "contact", label: "Contact" },
+];
 
 const Navbar = ({ toggleDrawer }) => {
   const theme = useTheme();
   const showDesktopMenu = useMediaQuery(theme.breakpoints.up("sm"));
-
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const linkProps = {
+    spy: true,
+    smooth: true,
+    offset: SCROLL_OFFSET,
+    duration: SCROLL_DURATION,
+  };
+
   return (
     <nav
-      className={`${classes.NavbarMainContainer} ${
-        scrolled ? classes.scrolled : ""
-      }`}
+      className={`${classes.navbar} ${scrolled ? classes.scrolled : ""}`}
+      aria-label="Main navigation"
     >
-      <div className={classes.NavbarLeftSide}>
-        <Link to="intro" smooth={true} offset={-70} duration={500}>
-          <span className={classes.logo}>Sayooj Satheesh</span>
-        </Link>
-      </div>
+      <Link to="intro" {...linkProps} className={classes.logoLink}>
+        <span className={classes.logo}>Sayooj</span>
+      </Link>
 
-      {/* Desktop Menu */}
       {showDesktopMenu ? (
-        <ul className={classes.NavItems}>
-          <li>
-            <Link to="intro" smooth={true} offset={-70} duration={500}>
-              HOME
-            </Link>
-          </li>
-
-          <li>
-            <Link to="about" smooth={true} offset={-70} duration={500}>
-              ABOUT
-            </Link>
-          </li>
-
-          <li>
-            <Link to="project" smooth={true} offset={-70} duration={500}>
-              PROJECTS
-            </Link>
-          </li>
-
-          <li>
-            <Link to="contact" smooth={true} offset={-70} duration={500}>
-              CONTACT
-            </Link>
-          </li>
+        <ul className={classes.navItems}>
+          {navLinks.map(({ to, label }) => (
+            <li key={to}>
+              <Link
+                to={to}
+                {...linkProps}
+                activeClass={classes.active}
+                className={classes.navLink}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
         </ul>
       ) : (
-        <MenuIcon
-          fontSize="large"
+        <button
+          type="button"
+          className={classes.menuButton}
           onClick={toggleDrawer}
-          className={classes.menuIcon}
-        />
+          aria-label="Open menu"
+        >
+          <MenuIcon fontSize="medium" />
+        </button>
       )}
     </nav>
   );

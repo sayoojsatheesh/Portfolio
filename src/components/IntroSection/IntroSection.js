@@ -1,70 +1,63 @@
-// CSS
 import classes from "./IntroSection.module.css";
-// Other
 import Typewriter from "typewriter-effect";
-// Custom
 import LeftSideStickyBar from "../shared/LeftSideStickyBar/LeftSideStickyBar";
-// MUI
 import { useTheme, useMediaQuery } from "@mui/material";
-// Libaries
 import { Link } from "react-scroll";
+import { SCROLL_DURATION, SCROLL_OFFSET } from "../../constants/layout";
+
 const IntroSection = () => {
   const theme = useTheme();
   const showSidebar = useMediaQuery(theme.breakpoints.up("md"));
+
+  const linkProps = {
+    spy: true,
+    smooth: true,
+    offset: SCROLL_OFFSET,
+    duration: SCROLL_DURATION,
+  };
 
   return (
     <section id="intro" className={classes.introMainContainer}>
       {showSidebar && <LeftSideStickyBar />}
 
-      <div className={classes.heroContent}>
-        <h4 className={classes.greeting}>
-          Hello <span className={classes.wave}>👋</span>
-        </h4>
+      <div className={classes.heroInner}>
+        <p className={classes.eyebrow}>Hello, I&apos;m</p>
 
-        <h1 className={classes.name}>
-          I'm <span className={classes.highlight}>Sayooj Satheesh</span>
-        </h1>
+        <h1 className={classes.name}>Sayooj Satheesh</h1>
 
-        <div className={classes.typeWriterText}>
-          <Typewriter
-            options={{
-              strings: [
-                "Frontend Developer",
-                "React Specialist",
-                "Backend Developer",
-                "Problem Solver",
-              ],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-        </div>
+        <p className={classes.headline}>
+          <span className={classes.headlinePrefix}>A </span>
+          <span className={classes.typeWriterText}>
+            <Typewriter
+              options={{
+                strings: [
+                  "Full-Stack Developer",
+                  "MERN Stack Engineer",
+                  "React & Node.js Developer",
+                  "API & Backend Specialist",
+                  "TypeScript | JavaScript Engineer",
+                ],
+                autoStart: true,
+                loop: true,
+                deleteSpeed: 40,
+                delay: 50,
+              }}
+            />
+          </span>
+        </p>
 
         <p className={classes.subtitle}>
-          I build fast, scalable and user-focused web applications.
+          I build fast, scalable, and user-focused web applications — from
+          polished interfaces to reliable backend systems.
         </p>
 
         <div className={classes.ctaContainer}>
-          <Link
-            to="project"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className={classes.primaryButton}
-          >
+          <Link to="project" {...linkProps} className={classes.primaryButton}>
             View My Work
           </Link>
 
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className={classes.secondaryButton}
-          >
-            Contact Me
+          <Link to="contact" {...linkProps} className={classes.secondaryButton}>
+            Get in Touch
           </Link>
         </div>
       </div>

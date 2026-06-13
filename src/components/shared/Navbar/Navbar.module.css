@@ -1,66 +1,84 @@
-.NavbarMainContainer {
-  width: 100%;
-  padding: 15px 60px;
+.navbar {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
+  height: var(--nav-height);
+  padding: 0 var(--space-6);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
-  transition: all 0.25s ease-in-out;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition), box-shadow var(--transition);
 }
 
-/* Navbar shadow when scrolling */
 .scrolled {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.logoLink {
+  text-decoration: none;
 }
 
 .logo {
-  font-size: 1.55rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  color: #7843e9;
-  cursor: pointer;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  transition: color var(--transition);
 }
 
-/* Desktop menu */
-.NavItems {
+.logoLink:hover .logo {
+  color: var(--color-accent);
+}
+
+.navItems {
   display: flex;
-  gap: 35px;
+  align-items: center;
+  gap: var(--space-8);
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.NavItems li a {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
+.navLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
   text-decoration: none;
-  transition: 0.2s ease;
+  transition: color var(--transition);
   cursor: pointer;
 }
 
-/* Hover effect */
-.NavItems li a:hover {
-  color: #7843e9;
-  transform: translateY(-2px);
+.navLink:hover,
+.navLink.active {
+  color: var(--color-accent);
 }
 
-/* Mobile menu icon */
-.menuIcon {
+.menuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
   cursor: pointer;
+  transition: border-color var(--transition), background-color var(--transition);
 }
 
-/* Responsive */
+.menuButton:hover {
+  background-color: var(--color-surface);
+  border-color: rgba(120, 67, 233, 0.2);
+}
+
 @media (max-width: 768px) {
-  .NavbarMainContainer {
-    padding: 12px 20px;
-  }
-
-  .logo {
-    font-size: 1.3rem;
+  .navbar {
+    padding: 0 var(--space-5);
   }
 }

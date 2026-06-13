@@ -1,76 +1,130 @@
-// MUI
-import Grid from "@mui/material/Grid";
-// CSS
 import classes from "./About.module.css";
 
-const techStack = [
-  "javascript",
-  "react",
-  "nextjs",
-  "html",
-  "css",
-  "materialui",
-  "nodejs",
-  "express",
-  "postgres",
-  "mongodb",
-  "aws",
-  "github"
+const stats = [
+  { value: "4+", label: "Years Full-Stack Experience" },
+  { value: "10+", label: "Production-Ready Projects" },
+  { value: "250+", label: "DSA Problems Solved" },
+  { value: "AWS", label: "Cloud & Deployment Experience" },
+];
+
+const highlights = [
+  "Building production-grade SaaS applications",
+  "React.js, Next.js & TypeScript development",
+  "Node.js APIs & full-stack architecture",
+  "PostgreSQL & MongoDB database design",
+  "AWS EC2, S3 & CI/CD deployments",
+  "Performance optimization & scalable systems",
+];
+
+const currentFocus = [
+  "Incident management platform features",
+  "Reusable UI components & workflow forms",
+  "Notification systems & live dashboards",
+];
+
+const techCategories = [
+  {
+    label: "Frontend",
+    items: ["javascript", "typescript", "react", "nextjs", "html", "css", "materialui"],
+  },
+  {
+    label: "Backend",
+    items: ["nodejs", "express"],
+  },
+  {
+    label: "Database",
+    items: ["postgres", "mongodb"],
+  },
+  {
+    label: "Tools & Cloud",
+    items: ["aws", "github"],
+  },
 ];
 
 const About = () => {
   return (
-    <div id="about" className={classes.AboutMainContainer}>
-      <h2 className={classes.SectionTitle}>About Me</h2>
+    <section id="about" className={classes.aboutSection}>
+      <div className="section-inner">
+      <header className="section-header">
+        <p className="section-eyebrow">About</p>
+        <h2 className="section-title">What I do</h2>
+        <p className="section-lead">
+          Full-Stack Engineer focused on building reliable, maintainable web
+          applications — from polished UIs to scalable backend systems.
+        </p>
+      </header>
 
-      <Grid container spacing={6} alignItems="center">
-        {/* LEFT SIDE */}
-        <Grid item xs={12} md={7}>
-          <h3 className={classes.SubTitle}>Who I Am</h3>
-
-          <p className={classes.Description}>
-            I’m a <b>Frontend-Focused Full-Stack Developer</b> with 3.5 years of
-            experience building fast, scalable, user-centric web applications. I
-            primarily work with
-            <b> React</b>, and have hands-on experience with
-            <b> Next.js and Node.js</b> in building full-stack features and
-            APIs.
-          </p>
-
-          <p className={classes.Description}>
-            Currently at <b>Zeazonz Technologies</b>, I build production-ready
-            features for an incident management platform — improving
-            performance, reliability, and user experience.
-          </p>
-
-          <p className={classes.Description}>
-            My work includes real-time dashboards, live tracking systems,
-            optimized APIs, reusable UI components, and cloud-ready
-            architectures. I have a strong foundation in
-            <b> data structures and algorithms</b>, which I apply to reason
-            about performance, scalability, and clean system design. I’m
-            passionate about clean code, system thinking, and shipping
-            meaningful products.
-          </p>
-        </Grid>
-
-        {/* RIGHT SIDE */}
-        <Grid item xs={12} md={5}>
-          <h3 className={classes.SubTitle}>Tech Stack</h3>
-
-          <div className={classes.TechGrid}>
-            {techStack.map((item) => (
-              <div key={item} className={classes.TechItem}>
-                <img
-                  src={`https://skillicons.dev/icons?i=${item}`}
-                  alt={item}
-                />
-              </div>
-            ))}
+      <div className={classes.statsGrid}>
+        {stats.map((item) => (
+          <div key={item.label} className={classes.statCard}>
+            <span className={classes.statValue}>{item.value}</span>
+            <span className={classes.statLabel}>{item.label}</span>
           </div>
-        </Grid>
-      </Grid>
-    </div>
+        ))}
+      </div>
+
+      <div className={classes.contentGrid}>
+        <div className={classes.mainColumn}>
+          <article className={classes.card}>
+            <h3 className={classes.cardTitle}>Overview</h3>
+            <p className={classes.summary}>
+              I work across the full stack — frontend, backend, databases, and
+              cloud — with a focus on clean architecture and shipping
+              production-ready software.
+            </p>
+
+            <div className={classes.currentRole}>
+              <span className={classes.roleLabel}>Currently</span>
+              <p className={classes.company}>
+                Full-Stack Engineer at{" "}
+                <strong>Zeazonz Technologies</strong>
+              </p>
+              <ul className={classes.focusList}>
+                {currentFocus.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </article>
+
+          <article className={classes.card}>
+            <h3 className={classes.cardTitle}>Key Highlights</h3>
+            <ul className={classes.highlightList}>
+              {highlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+        </div>
+
+        <aside className={classes.sideColumn}>
+          <article className={classes.card}>
+            <h3 className={classes.cardTitle}>Tech Stack</h3>
+            <div className={classes.techCategories}>
+              {techCategories.map((category) => (
+                <div key={category.label} className={classes.techCategory}>
+                  <h4 className={classes.techCategoryLabel}>
+                    {category.label}
+                  </h4>
+                  <div className={classes.techGrid}>
+                    {category.items.map((item) => (
+                      <div key={item} className={classes.techItem}>
+                        <img
+                          src={`https://skillicons.dev/icons?i=${item}`}
+                          alt={item}
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+        </aside>
+      </div>
+      </div>
+    </section>
   );
 };
 

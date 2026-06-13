@@ -1,50 +1,50 @@
 .footer {
-  background-color: #2d2e32;
-  padding: 40px 20px;
-  color: #ffffff;
-  text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-8) var(--space-6);
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
 }
 
-/* Footer text */
 .text {
-  font-size: 1rem;
-  opacity: 0.9;
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-footer-text);
 }
 
-/* Social icons container */
 .socials {
   display: flex;
-  gap: 1.4rem;
+  align-items: center;
+  gap: var(--space-3);
 }
 
-/* Removing default link styling */
-.iconWrapper {
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-footer-text);
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition), border-color var(--transition),
+    color var(--transition), transform var(--transition);
 }
 
-/* Icon style */
-.icon {
-  color: white;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+.socialLink:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
-/* Hover effect */
-.icon:hover {
-  transform: scale(1.2);
-  opacity: 0.85;
-  cursor: pointer;
-}
-
-/* Desktop layout */
-@media (min-width: 551px) {
+@media (min-width: 640px) {
   .footer {
     flex-direction: row;
-    justify-content: space-between;
-    padding: 40px 80px;
+    padding: var(--space-8) var(--space-10);
   }
 }

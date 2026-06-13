@@ -1,52 +1,58 @@
-// MUI //
 import { Drawer } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-
-// CSS //
 import classes from "./Sidebar.module.css";
-// Libaries //
 import { Link } from "react-scroll";
+import { SCROLL_DURATION, SCROLL_OFFSET } from "../../../constants/layout";
+
+const navLinks = [
+  { to: "intro", label: "Home" },
+  { to: "about", label: "About" },
+  { to: "project", label: "Projects" },
+  { to: "contact", label: "Contact" },
+];
 
 const Sidebar = ({ sideBarOpen, toggleDrawer }) => {
+  const linkProps = {
+    spy: true,
+    smooth: true,
+    offset: SCROLL_OFFSET,
+    duration: SCROLL_DURATION,
+  };
+
   return (
     <Drawer
       open={sideBarOpen}
       onClose={toggleDrawer}
-      transitionDuration={{
-        enter: 500,
-        exit: 500,
-      }}
+      transitionDuration={{ enter: 300, exit: 250 }}
+      PaperProps={{ className: classes.drawerPaper }}
     >
-      <div className={classes.sidebarMainContainer}>
-        <div className={classes.topSide}>
-          <CloseIcon fontSize="large" onClick={toggleDrawer} />
-        </div>
-        <div className={classes.bottomSide}>
-          <Link to="intro" spy={true} smooth={true} offset={-75} duration={500}>
-            <h3 onClick={toggleDrawer}>HOME</h3>
-          </Link>
-          <Link to="about" spy={true} smooth={true} offset={-1} duration={500}>
-            <h3 onClick={toggleDrawer}>About</h3>
-          </Link>
-          <Link
-            to="project"
-            spy={true}
-            smooth={true}
-            offset={-1}
-            duration={500}
+      <div className={classes.sidebar}>
+        <div className={classes.header}>
+          <span className={classes.brand}>Sayooj</span>
+          <button
+            type="button"
+            className={classes.closeButton}
+            onClick={toggleDrawer}
+            aria-label="Close menu"
           >
-            <h3 onClick={toggleDrawer}>Projects</h3>
-          </Link>
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-1}
-            duration={500}
-          >
-            <h3 onClick={toggleDrawer}>Contact</h3>
-          </Link>
+            <CloseIcon fontSize="small" />
+          </button>
         </div>
+
+        <nav className={classes.nav}>
+          {navLinks.map(({ to, label }) => (
+            <Link
+              key={to}
+              to={to}
+              {...linkProps}
+              activeClass={classes.active}
+              className={classes.navLink}
+              onClick={toggleDrawer}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </Drawer>
   );

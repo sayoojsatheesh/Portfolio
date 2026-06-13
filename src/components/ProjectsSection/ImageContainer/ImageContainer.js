@@ -1,28 +1,25 @@
-// CSS //
 import classes from "./ImageContainer.module.css";
 
-const ImageConatiner = ({
+const ImageContainer = ({
   imagePath,
   isHovered,
   handleHoverOut,
   handleHover,
+  alt,
 }) => {
   return (
     <div
-      className={`${classes.imagecontainer} ${
-        isHovered ? classes.scrolled : ""
-      }`}
+      className={classes.imageContainer}
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverOut}
     >
       <img
         src={imagePath}
-        alt="Car Rental Screenshot"
-        style={{ objectPosition: `${isHovered ? "bottom" : ""}` }}
-        className={`${classes.websiteimage} ${classes.scroll}`}
+        alt={alt}
+        className={`${classes.image} ${isHovered ? classes.scrolled : ""}`}
       />
     </div>
   );
 };
 
-export default ImageConatiner;
+export default ImageContainer;

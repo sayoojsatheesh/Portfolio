@@ -1,64 +1,42 @@
-// React //
 import { useState } from "react";
-// Custom //
-import ImageConatiner from "../ImageContainer/ImageContainer";
+import classes from "./ProjectSectionContainer.module.css";
+import ImageContainer from "../ImageContainer/ImageContainer";
 import ProjectDetails from "../ProjectDetails/ProjectDetails";
-// MUI //
-import { useMediaQuery } from "@mui/material";
 
 const ProjectSectionContainer = ({
-  techStack,
+  tags,
   gitlink,
   liveDemoLink,
-  heading,
-  summaryText,
+  title,
+  description,
   imagePath,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const isMobile = useMediaQuery("(max-width:1116px)");
 
-  const handleHover = () => {
-    setIsHovered(true);
-  };
-
-  const handleHoverOut = () => {
-    setIsHovered(false);
-  };
   return (
-    <div
-      style={{
-        backgroundColor: "rgba(246,246,246,255)",
-        width: "90%",
-        minHeight: "420px",
-        padding: "30px 35px",
-        margin: "30px auto",
-        display: "flex",
-        flexDirection: isMobile ? "column" : "row",
-        gap: "30px",
-        borderRadius: "12px",
-      }}
+    <article
+      className={classes.card}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <div style={{ flex: 1, minWidth: 0 }}>
-        <ImageConatiner
-          handleHover={handleHover}
-          handleHoverOut={handleHoverOut}
+      <div className={classes.imageWrapper}>
+        <ImageContainer
+          handleHover={() => setIsHovered(true)}
+          handleHoverOut={() => setIsHovered(false)}
           isHovered={isHovered}
           imagePath={imagePath}
+          alt={`${title} project screenshot`}
         />
       </div>
 
-      <div style={{ flex: 1, minWidth: 0}}>
-        <ProjectDetails
-          handleHover={handleHover}
-          handleHoverOut={handleHoverOut}
-          summaryText={summaryText}
-          heading={heading}
-          liveDemoLink={liveDemoLink}
-          gitlink={gitlink}
-          techStack={techStack}
-        />
-      </div>
-    </div>
+      <ProjectDetails
+        tags={tags}
+        gitlink={gitlink}
+        liveDemoLink={liveDemoLink}
+        title={title}
+        description={description}
+      />
+    </article>
   );
 };
 

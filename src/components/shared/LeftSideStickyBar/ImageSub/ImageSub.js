@@ -1,11 +1,15 @@
 import classes from "./ImageSub.module.css";
 
-const ImageSub = ({ imageURL, link }) => {
+const ImageSub = ({ imageURL, link, label }) => {
   return (
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      <div className={classes.imageContainerWrapper}>
-        <img alt="sidebar" src={imageURL} />
-      </div>
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={classes.link}
+      aria-label={label}
+    >
+      <img src={imageURL} alt="" />
     </a>
   );
 };
