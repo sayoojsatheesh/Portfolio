@@ -52,9 +52,9 @@ const IntroSection = () => {
         </p>
 
         <div className={classes.ctaContainer}>
-          <Link to="project" {...linkProps} className={classes.primaryButton}>
+          {/* <Link to="project" {...linkProps} className={classes.primaryButton}>
             View My Work
-          </Link>
+          </Link> */}
 
           <Link to="contact" {...linkProps} className={classes.secondaryButton}>
             Get in Touch
